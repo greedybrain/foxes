@@ -2,7 +2,10 @@ require 'pry'
 
 class ApplicationController < Sinatra::Base
 
-    set :views, 'app/views'
+    configure do
+        set :views, 'app/views'
+        enable :sessions
+    end
 
     get "/" do
         erb :welcome
@@ -10,21 +13,6 @@ class ApplicationController < Sinatra::Base
 
     get "/restrictions" do
         erb :restrictions
-    end
-
-    get "/foods" do
-        @foods = Food.all
-        erb :index
-    end
-
-    get "/new" do
-        erb :new
-    end
-
-    post "/foods" do
-        binding.pry
-        # design the new food form to capture all necessary attribute data so we can create Food:
-        # Food.create(params)
     end
 
 end
