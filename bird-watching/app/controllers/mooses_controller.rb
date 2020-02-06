@@ -1,0 +1,2 @@
+class MoosesController < ApplicationController
+end

@@ -1,0 +1,2 @@
+class ScissorsController < ApplicationController
+end
