@@ -1,6 +1,8 @@
 class GoosesController < ApplicationController
 
     def create
+        Goose.create(goose_params)
+
         @goose = Goose.new(goose_params)
         if @goose.save
             redirect_to goose_path(@goose)
